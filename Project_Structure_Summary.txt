@@ -1,0 +1,45 @@
+echocare-api
+------------
+
+	As name suggests, API to serve model predictions.
+	FastApi service running on HF space (https://huggingface.co/spaces/Pieric/echocare-api)
+	(api doc : https://pieric-echocare-api.hf.space/docs#)
+	
+	Models / pipeline loaded on startup
+	models and pipeline are stored on MLFlow HF space
+	
+	VGG_30 endpoint
+		- preprocess
+		- vggnet model predict(input)
+		
+	VGG_30_regularized endpoint (regularized version of vgg)
+		- vggnet regularized pipeline predict(input)
+		- pre-processing is handled by pipeline prior to predict
+		
+echocare-dashboard
+------------------
+
+	- Enable to load/record audio speech and provide 
+		- audio visual features
+		- alzheimer prediction (based on audio speech)
+	
+	- Streamlit app running on HF space (https://huggingface.co/spaces/Pieric/echocare-dashboard)
+		
+	- prediction is done by calling to echocare-api
+	
+
+echocare-eda
+------------
+
+	- Exploratory Data Analysis made on data (audio sounds, metadata,...)
+	
+
+echocare-experiment
+-------------------
+
+	- logging best-model pipeline (audio preprocessing and model training) experiment to mlflow HF space
+	
+echocare-models
+---------------
+	
+	Different ML models tested as part of this project
